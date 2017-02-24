@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{
+				position: relative;
+				width:685px;
+				margin:50px auto;
+				height:370px;
+				background: #efefef;
+				padding:25px;
+				overflow: hidden;
+			}
+			#div2{
+				height:50px;
+				line-height: 50px;
+				font-weight: bold;
+				font-size: 24px;
+			}
+			#btn{
+				width: 100px;
+				background: red;
+				color: #fff;
+				line-height: 30px;
+				text-align: center;
+				border: none;
+			}
+			#div3{
+				margin-top:40px;
+				width:100px;
+				height:100px;
+				border:2px solid black;
+				background:#fff ;
+				transition: 1s;
+			}
+			#div4{
+				width:735px;
+				height:420px;
+				position: absolute;
+				top:0px;
+				left:0px;
+				background: rgba(128,128,128,0.5);
+				display: none;
+			}
+			#ul1{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				position: absolute;
+				right:25px;
+				bottom:25px;
+				border:10px solid #9c949c;
+				width:250px;
+				height:180px;
+				background: #fff;
+				padding:10px 25px;
+			}
+			
+			#ul1 li{
+				height:40px;
+				line-height: 40px;
+				text-align: center;
+			}
+			li button{
+				height:30px;
+				width:34px;
+				background:#efefef;
+				border:1px solid #c0c0c0;
+			}
+			li #sure, li #reset_{
+				width:60px;
+				height:30px;
+				border:none;
+				background: #002952;
+				line-height: 30px;
+				text-align: center;
+				color: #fff;
+			}
+			li #red{
+				background: greenyellow;
+				width:32px;
+				height:36px;
+				border:none;
+				box-sizing: border-box;
+			}
+			li #yellow{
+				background: goldenrod;
+				width:32px;
+				height:36px;
+				border:none;
+				box-sizing: border-box;
+			}
+			li #blue{
+				background: dodgerblue;
+				width:32px;
+				height:36px;
+				border:none;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			window.onload = fnLoad;
+			function fnLoad () {
+				var btn = document.getElementById('btn');
+				var div1 = document.getElementById('div1');
+				var div3 = document.getElementById('div3');
+				var div4 = document.getElementById('div4');
+				var ul1 = document.getElementById('ul1');
+				var red = document.getElementById('red');
+				var yellow = document.getElementById('yellow');
+				var blue = document.getElementById('blue');
+				var w200 = document.getElementById('w200');
+				var w300 = document.getElementById('w300');
+				var w400 = document.getElementById('w400');
+				var h200 = document.getElementById('h200');
+				var h300 = document.getElementById('h300');
+				var h400 = document.getElementById('h400');
+				var reset_ = document.getElementById('reset_');
+				var sure = document.getElementById('sure');
+				//点击设置按钮的鼠标点击事件
+				btn.onclick = div4Show;
+				function div4Show () {
+				//div4.style.display = 'block';
+				div4.style.cssText = 'display: block;';
+				}
+				//红色按钮鼠标点击事件
+				red.onclick = div3Red;
+				function div3Red () {
+					div3.style.background = 'red';
+				}
+				//红色按钮鼠标移入事件
+				red.onmouseover = redOver;
+				function redOver() {
+					red.style.background = 'red';
+					red.style.border = '1px solid #000';
+				}
+				//红色按钮鼠标移出事件
+				red.onmouseout = redOut;
+				function redOut () {
+					red.style.background = 'greenyellow';
+					red.style.border = 'none';
+				}
+				//黄色按钮鼠标点击事件
+				yellow.onclick = div3Yellow;
+				function div3Yellow () {
+					div3.style.background = 'yellow';
+				}	
+				//黄色按钮鼠标移入事件
+				yellow.onmouseover = yellowOver;
+				function yellowOver() {
+					yellow.style.background = 'yellow';
+					yellow.style.border = '1px solid #000';
+				}
+				//黄色按钮鼠标移出事件
+				yellow.onmouseout = yellowOut;
+				function yellowOut () {
+					yellow.style.background = 'goldenrod';
+					yellow.style.border = 'none';
+				}
+				//蓝色按钮鼠标点击事件
+				blue.onclick = div3blue;
+				function div3blue () {
+					div3.style.background = 'blue';
+				}
+				//蓝色按钮鼠标移入事件
+				blue.onmouseover = blueOver;
+				function blueOver() {
+					blue.style.background = 'blue';
+					blue.style.border = '1px solid #000';
+				}
+				//蓝色按钮鼠标移出事件
+				blue.onmouseout = blueOut;
+				function blueOut () {
+					blue.style.background = 'dodgerblue';
+					blue.style.border = 'none';
+				}
+				//宽200按钮鼠标点击事件
+				w200.onclick = div3W200;
+				function div3W200 () {
+					div3.style.width = '200px';
+				}
+				//宽200按钮鼠标移入事件
+				w200.onmouseover = w200Over;
+				function w200Over() {
+					w200.style.background = 'gold';
+					w200.style.border = '1px solid #000';
+				}
+				//宽200按钮鼠标移出事件
+				w200.onmouseout = w200Out;
+				function w200Out () {
+					w200.style.background = '#efefef';
+					w200.style.border = '1px solid #c0c0c0';
+				}
+				//宽300按钮鼠标点击事件
+				w300.onclick = div3W300;
+				function div3W300 () {
+					div3.style.width = '300px';
+				}
+				//宽300按钮鼠标移入事件
+				w300.onmouseover = w300Over;
+				function w300Over() {
+					w300.style.background = 'gold';
+					w300.style.border = '1px solid #000';
+				}
+				//宽300按钮鼠标移出事件
+				w300.onmouseout = w300Out;
+				function w300Out () {
+					w300.style.background = '#efefef';
+					w300.style.border = '1px solid #c0c0c0';
+				}
+				//宽400按钮鼠标点击事件
+				w400.onclick = div3W400;
+				function div3W400 () {
+					div3.style.width = '400px';
+				}
+				//宽400按钮鼠标移入事件
+				w400.onmouseover = w400Over;
+				function w400Over() {
+					w400.style.background = 'gold';
+					w400.style.border = '1px solid #000';
+				}
+				//宽400按钮鼠标移出事件
+				w400.onmouseout = w400Out;
+				function w400Out () {
+					w400.style.background = '#efefef';
+					w400.style.border = '1px solid #c0c0c0';
+				}
+				//高200按钮鼠标点击事件
+				h200.onclick = div3H200;
+				function div3H200 () {
+					div3.style.height = '200px';
+				}
+				//高200按钮鼠标移入事件
+				h200.onmouseover = h200Over;
+				function h200Over() {
+					h200.style.background = 'gold';
+					h200.style.border = '1px solid #000';
+				}
+				//高200按钮鼠标移出事件
+				h200.onmouseout = h200Out;
+				function h200Out () {
+					h200.style.background = '#efefef';
+					h200.style.border = '1px solid #c0c0c0';
+				}
+				//高300按钮鼠标点击事件
+				h300.onclick = div3H300;
+				function div3H300 () {
+					div3.style.height = '300px';
+				}
+				//高300按钮鼠标移入事件
+				h300.onmouseover = h300Over;
+				function h300Over() {
+					h300.style.background = 'gold';
+					h300.style.border = '1px solid #000';
+				}
+				//高300按钮鼠标移出事件
+				h300.onmouseout = h300Out;
+				function h300Out () {
+					h300.style.background = '#efefef';
+					h300.style.border = '1px solid #c0c0c0';
+				}
+				//高400按钮鼠标点击事件
+				h400.onclick = div3H400;
+				function div3H400 () {
+					div3.style.height = '400px';
+				}
+				//高400按钮鼠标移入事件
+				h400.onmouseover = h400Over;
+				function h400Over() {
+					h400.style.background = 'gold';
+					h400.style.border = '1px solid #000';
+				}
+				//高400按钮鼠标移出事件
+				h400.onmouseout = h400Out;
+				function h400Out () {
+					h400.style.background = '#efefef';
+					h400.style.border = '1px solid #c0c0c0';
+				}
+				//恢复按钮鼠标点击事件 可以给
+				reset_.onclick = div3Reset;
+				function div3Reset () {
+					
+					//div3.style.width = '100px';
+					
+					//div3.style.width = '';
+					
+					div3.style.cssText = '';
+//					div3.style.height = '100px';
+//					div3.style.background = '#fff';
+//					reset_.style.border = '1px solid #efbd6b';
+				}
+				//确定按钮鼠标点击事件
+				sure.onclick = div4Hidden;
+				function div4Hidden () {
+					div4.style.display = 'none';
+					sure.style.border = '1px solid #efbd6b';
+				}
+			}
+		</script>
+			<div id="div1">
+				<div id="div2">
+					请为下面的DIV设置样式：
+					<button id="btn">点击设置</button>
+				</div>
+				<div id="div3">
+					
+				</div>
+				<div id="div4">
+					<ul id="ul1">
+						<li>
+							请设置背景颜色：
+							<button id="red">红</button>
+							<button id="yellow">黄</button>
+							<button id="blue">蓝</button>
+						</li>
+						<li clas>
+							请选择宽（px）：
+							<button id="w200">200</button>
+							<button id="w300">300</button>
+							<button id="w400">400</button>
+						</li>
+						<li>
+							请选择高（px）：
+							<button id="h200">200</button>
+							<button id="h300">300</button>
+							<button id="h400">400</button>
+						</li>
+						<li>
+							<button id="reset_">恢复</button>
+							<button id="sure">确定</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+	</body>
+</html>
