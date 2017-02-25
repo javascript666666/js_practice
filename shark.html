@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.wrap{
+				width: 500px;
+				height: 500px;
+				border: 3px solid #000;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.box{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="box"></div>
+		</div>
+		<script src="../JS/han_tools.js"></script>
+		<script>
+			var box = document.querySelector('.box');
+			var wrap = document.querySelector('.wrap');
+			var arr = [];
+			var index = 0;
+			var timer;
+//			wrap.onclick = function(){
+//				for(var i=50;i>=0;i--){
+//					arr.push(-i,i);
+//				}
+//				console.log(arr);
+//				timer = setInterval(function(){
+//					box.style.transform = `translateX(${arr[index++]}px)`
+//					if (index == arr.length) {
+//						clearInterval(timer);
+//						console.log(`抖完了!好爽!`);
+//					}
+//				},1000/60)
+//			}
+			han.shake(box,'translateX',50,function(){
+				han.animate(box,{opacity:0.5},1000)
+			});
+		</script>
+	</body>
+</html>
